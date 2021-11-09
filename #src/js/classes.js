@@ -1,5 +1,3 @@
-class Progect{
-    constructor(name){
-        this.name = name;
-    }
-} 
+@@include('Progect.js')
+progects = new Progect();
+progects.draw(newProgect.parentElement, data);

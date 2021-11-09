@@ -7,6 +7,7 @@ let header = document.querySelector('header'),
     popubForCreatingProgect = document.querySelector('.create'),
     createForm = document.querySelector('.create__form'),
     closeCP = document.querySelector('.create__close'),
+    data = JSON.parse(localStorage.getItem('data')) || [{name: 'Web Friends'}];
     links = document.querySelectorAll('a');
 sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
 //Links default
