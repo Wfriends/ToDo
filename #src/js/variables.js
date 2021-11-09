@@ -6,6 +6,7 @@ let header = document.querySelector('header'),
     sidebar = document.querySelector('.sidebar'),
     popubForCreatingProgect = document.querySelector('.create'),
     createForm = document.querySelector('.create__form'),
+    closeCP = document.querySelector('.create__close'),
     links = document.querySelectorAll('a');
 sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
 //Links default

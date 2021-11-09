@@ -21,6 +21,7 @@
         transform: translateX(-10%);
         font-size: inherit;
         min-width: 200px;
+        max-width: 200px;
         padding: 10px;
         background: $baseColor;
         transition: .3s all ease;
@@ -33,13 +34,24 @@
 .create{
     display: block;
     padding: 10px 30px;
+    padding-top: 0px;
     background: $baseColor;
     position: fixed;
-    top: 15%;
+    top: 30%;
     left: -100%;
     z-index: 1000;
-    transition: .3s left ease;
+    transition: .8s left ease;
     transform: translate(-50%, 0%);
+    &__head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__close{
+        transform: rotate(45deg);
+        font-size: 65px;
+        color: red;
+    }
 }
 .create.active{
     left: 50%;
