@@ -20,6 +20,7 @@
         margin: 0 auto;
         transform: translateX(-10%);
         font-size: inherit;
+        min-width: 200px;
         padding: 10px;
         background: $baseColor;
         transition: .3s all ease;
