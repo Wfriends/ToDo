@@ -34,6 +34,7 @@
 .create{
     display: block;
     padding: 10px 30px;
+    max-width: 800px;
     padding-top: 0px;
     background: $baseColor;
     position: fixed;
@@ -47,10 +48,27 @@
         align-items: center;
         justify-content: space-between;
     }
+    &__title{
+        font-size: 25px;
+    }
     &__close{
         transform: rotate(45deg);
         font-size: 65px;
         color: red;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+    }
+    &__input{
+        &:first-child{
+            margin-top: 0;
+        }
+        padding: 5px;
+        margin: 10px 0;
+    }
+    &__save{
+        padding: 5px;
     }
 }
 .create.active{
