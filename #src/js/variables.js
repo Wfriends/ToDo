@@ -6,6 +6,7 @@ let header = document.querySelector('header'),
     sidebar = document.querySelector('.sidebar'),
     popubForCreatingProgect = document.querySelector('.create'),
     createForm = document.querySelector('.create__form'),
+    progects,
     closeCP = document.querySelector('.create__close'),
     data = JSON.parse(localStorage.getItem('data')) || [{name: 'Web Friends'}];
     links = document.querySelectorAll('a');
