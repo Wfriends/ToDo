@@ -10,6 +10,7 @@ function clearForm (form){
 }
 function createProgect(e) {
     e.preventDefault();
+    console.log('jj');
     let name = createForm.children[0].value;
     newProgect.parentElement.insertAdjacentHTML('beforebegin', `<li class="sidebar__item"><a href="#" class="sidebar__link">${name}</a></li>`);
     closePopub(popubForCreatingProgect);
