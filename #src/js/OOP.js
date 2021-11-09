@@ -1,5 +1,0 @@
-class Progect{
-    constructor(){
-        
-    }
-} 

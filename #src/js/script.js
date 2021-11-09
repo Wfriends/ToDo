@@ -1,3 +1,3 @@
 @@include('variables.js')
-@@include('OOP.js')
+@@include('classes.js')
 @@include('newProgect.js')
