@@ -22,4 +22,9 @@ class ToDo {
             localStorage.setItem('folders', JSON.stringify(folders));
         }  
     };
+    dataBase = {
+        options: {
+            
+        }
+    };
 }

@@ -16,7 +16,7 @@ let project_folder = require('path').basename(__dirname),
             fonts: source_folder + '/fonts/*.ttf',
         },
         watch: {
-            html: source_folder+'/*.html',
+            html: source_folder+'/**/*.html',
             css: source_folder + '/scss/**/*.scss',
             js: source_folder + '/js/**/*.js',
             img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
@@ -49,14 +49,11 @@ function browserSync(){
     });
 }
 function html (){
-    src(path.src.html)
+    return src(path.src.html)
         .pipe(fileinclude())
         .pipe(webphtml())
         .pipe(dest(path.build.html))
-        .pipe(browsersync.stream())
-        src(source_folder + '/node_modules').pipe(dest(project_folder))
-        .pipe(src(source_folder + '/package-lock.json')).pipe(dest(project_folder))
-        .pipe(src(source_folder + '/package.json')).pipe(dest(project_folder))
+        .pipe(browsersync.stream());
 }
 function images (){
     return src(path.src.img)
