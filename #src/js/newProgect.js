@@ -13,6 +13,7 @@ function createProgect(e) {
     let name = createForm.children[0].value;
     let progectTemp = {name: name};
     progects.create(progectTemp);
+    progects.draw(newProgect.parentElement, data);
     closePopub(popubForCreatingProgect);
     clearForm(createForm);
 }

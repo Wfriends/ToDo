@@ -19,6 +19,5 @@ class Progect {
         data.push(progect);
         localStorage.setItem('data', JSON.stringify(data));
         data = JSON.parse(localStorage.getItem('data'));
-        progects.draw(newProgect, data);
     }
 }
