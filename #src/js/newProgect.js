@@ -11,9 +11,10 @@ function clearForm (form){
 function createProgect(e) {
     e.preventDefault();
     let name = createForm.children[0].value;
-    let progectTemp = {name: name};
-    //todo.create(progectTemp);
+    let folder = {name: name};
+    todo.createFolder(folder);
     todo.drawFolders(newProgect.parentElement, 'beforebegin', folders);
+
     closePopub(popubForCreatingProgect);
     clearForm(createForm);
 }

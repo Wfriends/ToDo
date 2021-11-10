@@ -9,10 +9,13 @@ let header = document.querySelector('header'),
     todo,
     task,
     closeCP = document.querySelector('.create__close'),
-    folders = JSON.parse(localStorage.getItem('folders')) || [{name: 'Web Friends'}];
+    folders = JSON.parse(localStorage.getItem('folders')) || [];
     links = document.querySelectorAll('a');
 sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
 //Links default
+window.onresize = ()=>{
+    sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
+}
 links.forEach(elem => {
     let reg = new RegExp('/#', '');
     if (reg.test(elem.href)) {
