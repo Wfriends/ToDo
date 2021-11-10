@@ -1,3 +1,3 @@
-@@include('Progect.js')
-progects = new Progect();
-progects.draw(newProgect.parentElement, data);
+@@include('ToDo.js')
+todo = new ToDo;
+todo.drawFolders(newProgect.parentElement, 'beforebegin', folders);
