@@ -12,8 +12,8 @@ function createProgect(e) {
     e.preventDefault();
     let name = createForm.children[0].value;
     let folder = {name: name};
-    todo.createFolder(folder);
-    todo.drawFolders(newProgect.parentElement, 'beforebegin', folders);
+    todo.folder.create(folder);
+    todo.folder.draw(newProgect.parentElement, 'beforebegin', folders);
 
     closePopub(popubForCreatingProgect);
     clearForm(createForm);
