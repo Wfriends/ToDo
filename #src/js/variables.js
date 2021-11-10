@@ -7,7 +7,6 @@ let header = document.querySelector('header'),
     popubForCreatingProgect = document.querySelector('.create'),
     createForm = document.querySelector('.create__form'),
     todo,
-    task,
     closeCP = document.querySelector('.create__close'),
     folders = JSON.parse(localStorage.getItem('folders')) || [];
     links = document.querySelectorAll('a');
