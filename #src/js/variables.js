@@ -8,10 +8,9 @@ let header = document.querySelector('header'),
     createForm = document.querySelector('.create__form'),
     todo,
     closeCP = document.querySelector('.create__close'),
-    folders = JSON.parse(localStorage.getItem('folders')) || [];
+    folders = JSON.parse(localStorage.getItem('folders')) || [],
     links = document.querySelectorAll('a');
 sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
-let mysql = require('mysql');
 //Links default
 window.onresize = ()=>{
     sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';

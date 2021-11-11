@@ -2,7 +2,7 @@
   "name": "test",
   "version": "1.0.0",
   "description": "testing",
-  "main": "index.html",
+  "main": "/html/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,5 +31,8 @@
     "gulp-webpcss": "^1.1.1",
     "sass": "^1.36.0",
     "webp-converter": "^2.2.3"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
   }
 }

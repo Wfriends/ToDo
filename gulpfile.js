@@ -73,13 +73,7 @@ function images (){
             })
         )
         .pipe(dest(path.build.img))
-        .pipe(browsersync.stream())
-        .pipe(src(source_folder +'/package-lock.json'))
-        .pipe(dest(project_folder))
-        .pipe(src(source_folder +'/package.json'))
-        .pipe(dest(project_folder))
-        .pipe(src(source_folder +'/node_modules/**/*.*'))
-        .pipe(dest(project_folder + '/node_modules'));
+        .pipe(browsersync.stream());
 }
 function fonts(){
     src(path.src.fonts)
