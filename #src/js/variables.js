@@ -11,7 +11,7 @@ let header = document.querySelector('header'),
     folders = JSON.parse(localStorage.getItem('folders')) || [];
     links = document.querySelectorAll('a');
 sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
-const mysql = require('mysql');
+let mysql = require('mysql');
 //Links default
 window.onresize = ()=>{
     sidebar.style.minHeight = window.innerHeight - headerHeight + 'px';
