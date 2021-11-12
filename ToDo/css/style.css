@@ -170,6 +170,7 @@ h6 {
   max-width: 25%;
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
+  min-height: 100%;
   position: sticky;
   z-index: 1;
   border-right: 2px solid #C4C4C4;

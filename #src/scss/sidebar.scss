@@ -1,6 +1,7 @@
 .sidebar{
     max-width: 25%;
     flex-basis: 25%;
+    min-height: 100%;
     position: sticky;
     z-index: 1;
     border-right: 2px solid $baseColor;
