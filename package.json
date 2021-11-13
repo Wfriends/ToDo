@@ -34,7 +34,8 @@
   "dependencies": {
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3-rc.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.9.0"
   },
   "repository": {
     "type": "git",

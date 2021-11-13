@@ -1,11 +1,11 @@
-let config = require('./config'),
-    mysql = require('mysql2'),
-    path = require('path'),
-    http = require('http'),
-    fs = require('fs'),
-    conn = mysql.createConnection(config);
+const mysql = require('mysql2');
+const path = require('path');
+const http = require('http');
+const fs = require('fs');
+const db = require('./db');
+const Folder = db.folder;
 http.createServer((req, res) =>{
-    console.log(req.url);
+    console.log("Запрос: "+ req.url);
     if(req.url == '/'){
         sendRes('index.html', "text/html", res);
     }else{
@@ -21,10 +21,12 @@ function sendRes(url, contentType, res){
             res.writeHead(404);
             res.write("file not found");
             res.end();
+            console.log('Error 404');
         }else{
-            res.writeHead(200);
+            res.writeHead(200, {"Content-Type": contentType});
             res.write(content);
-            res.end();
+            res.end()
+            console.log("Ответ:" + file + "\n Content-Type: " + contentType);
         }
     });
 }
@@ -39,6 +41,6 @@ function getType(url){
         case ".js":
             return 'application/json'
         default:
-            return "application/octate-stream"
+            return "application/octate-stream";
     }
 }
