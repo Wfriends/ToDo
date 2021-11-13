@@ -12,6 +12,7 @@ mainheight()
 window.addEventListener('resize', mainheight);
 //links e.preventDefault();
 function defaultLink(e){
+    
     e.preventDefault();
 }
 links.forEach(elem => {
