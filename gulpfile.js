@@ -44,7 +44,7 @@ function browserSync(){
         server:{
             baseDir: path.clean
         },
-        port: 3000,
+        port: 8000,
         notyfy: false
     });
 }
