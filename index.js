@@ -7,11 +7,18 @@ const Folder = db.folder;
 const PORT = process.env.PORT || 8080;
 const jwt = require('jsonwebtoken')
 const {secret} = require('./db/config');
+const login = require('./login');
+const { reset } = require('nodemon');
 http.createServer((req, res) =>{
     console.log("Запрос: "+ req.url);
     if(req.url == '/'){
+        let token = login.test(req, res, secret);
+        console.log(req.headers.authorization);
         sendRes('index.html', "text/html", res);
-    }else{
+    }else if(req.url == '/login'){
+
+    }
+    else{
         sendRes(req.url, getType(req.url), res)
     }
 }).listen(PORT, ()=>{
