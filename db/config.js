@@ -1,5 +1,5 @@
 module.exports = {
-    database = 'todo',
+    database: 'todo',
     user: 'mysql',
     password: 'mysql',
     host: "localhost"

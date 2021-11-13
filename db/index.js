@@ -1,7 +1,8 @@
 const Sequlize = require('sequelize');
-const sequilize = new Sequlize("todo", "mysql", "musql", {
+const config = require('./config');
+const sequilize = new Sequlize(config.database, config.user, config.password, {
     dialect: "mysql",
-    host: "localhost"
+    host: config.host
 });
 const Folder = require('./Folders')(sequilize);
 module.exports = {
