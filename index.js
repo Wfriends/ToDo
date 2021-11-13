@@ -14,7 +14,6 @@ http.createServer((req, res) =>{
     }else{
         sendRes(req.url, getType(req.url), res)
     }
-    console.log(req.user);
 }).listen(PORT, ()=>{
     console.log(`server start on ${PORT} port`);
 });
