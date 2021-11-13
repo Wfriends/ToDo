@@ -2,9 +2,10 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "testing",
-  "main": "/html/index.html",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "Andrey",
@@ -31,7 +32,9 @@
     "webp-converter": "^2.2.3"
   },
   "dependencies": {
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3-rc.0",
+    "nodemon": "^2.0.15"
   },
   "repository": {
     "type": "git",

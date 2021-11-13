@@ -1,4 +1,4 @@
-let project_folder = require('path').basename(__dirname),
+let project_folder = 'static',
     source_folder = '#src',
     path = {
         build: {
@@ -11,7 +11,7 @@ let project_folder = require('path').basename(__dirname),
         src: {
             html: [source_folder+ '/*.html', "!" + source_folder + '/_*.html'],
             css: source_folder + '/scss/style.scss',
-            js: [source_folder+ '/js/*.js', "!" + source_folder + '/js/_*.js'],
+            js: [source_folder+ '/js/script.js'],
             img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
             fonts: source_folder + '/fonts/*.ttf'
         },
@@ -21,7 +21,7 @@ let project_folder = require('path').basename(__dirname),
             js: source_folder + '/js/**/*.js',
             img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}'
         },
-        clean: "./" + project_folder + "/"
+        clean: "./" + project_folder
     };
 let {src, dest} = require('gulp'),
     gulp = require('gulp'),
