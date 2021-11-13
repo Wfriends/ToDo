@@ -3,5 +3,4 @@ module.exports = {
     user: 'mysql',
     password: 'mysql',
     host: "localhost"
-    
 };
