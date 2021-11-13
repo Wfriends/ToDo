@@ -4,6 +4,7 @@ const http = require('http');
 const fs = require('fs');
 const db = require('./db');
 const Folder = db.folder;
+const PORT = process.env.PORT || 8080;
 http.createServer((req, res) =>{
     console.log("Запрос: "+ req.url);
     if(req.url == '/'){
@@ -11,8 +12,8 @@ http.createServer((req, res) =>{
     }else{
         sendRes(req.url, getType(req.url), res)
     }
-}).listen(301, ()=>{
-    console.log('server start 3000');
+}).listen(PORT, ()=>{
+    console.log(`server start on ${PORT} port`);
 });
 function sendRes(url, contentType, res){
     let file = path.join(__dirname + '/static/' + url);

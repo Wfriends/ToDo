@@ -32,6 +32,7 @@
     "webp-converter": "^2.2.3"
   },
   "dependencies": {
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3-rc.0",
     "nodemon": "^2.0.15",
