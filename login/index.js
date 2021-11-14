@@ -1,14 +1,19 @@
-const jwt = require('jsonwebtoken');
-const {secret} = require('../db/config');
+const Cookies = require('cookies')
 module.exports = {
     test: (req, res) => {
-        let payload = {
-            id: 0
+        let cookies = new Cookies(req, res, {keys: ['secret']})
+        let id = cookies.get('id', {
+            signed: true
+        });
+        if (id !== undefined) {
+            return id;
+        }else{
+            return "undefined";
         }
-        try {
-            let token = jwt.sign(payload, secret, {expiresIn: 60 * 60});
-        } catch (err) {
-            console.log(err.message);
-        }
+    },
+    login(req, res, id){
+        let cookies = new Cookies(req, res, {keys: ['secret']});
+        cookies.set("id", id, {
+            signed: true});
     }
 };

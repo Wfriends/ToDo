@@ -32,6 +32,8 @@
     "webp-converter": "^2.2.3"
   },
   "dependencies": {
+    "cookie": "^0.4.1",
+    "cookies": "^0.8.0",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3-rc.0",

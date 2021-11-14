@@ -17,3 +17,11 @@ function defaultLink(e){
 links.forEach(elem => {
     elem.addEventListener('click', defaultLink);
 });
+//loginned
+let loginned = fetch('/test', {
+    method: "GET"
+});
+loginned.then((res) => {
+        return res.text();
+    }).then((data)=>
+    console.log(data))

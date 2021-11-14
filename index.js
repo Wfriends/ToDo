@@ -5,21 +5,21 @@ const fs = require('fs');
 const db = require('./db');
 const Folder = db.folder;
 const PORT = process.env.PORT || 8080;
-const jwt = require('jsonwebtoken')
-const {secret} = require('./db/config');
 const login = require('./login');
-const { reset } = require('nodemon');
+const Cookies = require('cookies');
 http.createServer((req, res) =>{
-    console.log("Запрос: "+ req.url);
-    if(req.url == '/'){
-        let token = login.test(req, res, secret);
-        console.log(req.headers.authorization);
-        sendRes('index.html', "text/html", res);
-    }else if(req.url == '/login'){
-
-    }
-    else{
-        sendRes(req.url, getType(req.url), res)
+    if (req.method === "GET") {
+        console.log("Запрос: "+ req.url);
+        if(req.url == '/'){
+            sendRes('index.html', "text/html", res);
+        }else if(req.url == '/test'){
+            const cookies = new Cookies(req, res, {keys: ["secret"]});
+            let logined = login.test(req, res);
+            res.end(logined);
+        }
+        else{
+            sendRes(req.url, getType(req.url), res)
+        }
     }
 }).listen(PORT, ()=>{
     console.log(`server start on ${PORT} port`);
