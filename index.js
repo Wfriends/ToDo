@@ -13,9 +13,10 @@ http.createServer((req, res) =>{
         if(req.url == '/'){
             sendRes('index.html', "text/html", res);
         }else if(req.url == '/test'){
-            const cookies = new Cookies(req, res, {keys: ["secret"]});
             let logined = login.test(req, res);
-            res.end(logined);
+            console.log(logined);
+            res.write(logined);
+            res.end();
         }
         else{
             sendRes(req.url, getType(req.url), res)

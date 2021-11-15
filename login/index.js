@@ -5,10 +5,10 @@ module.exports = {
         let id = cookies.get('id', {
             signed: true
         });
-        if (id !== undefined) {
-            return id;
-        }else{
+        if (id == undefined) {
             return "undefined";
+        }else{
+            return id;
         }
     },
     login(req, res, id){
