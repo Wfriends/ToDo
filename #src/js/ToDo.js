@@ -1,22 +1,22 @@
-function getId(){
-    return new Promise((resolve, rejected) => {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = () => resolve(xhttp.responseText)
-        xhttp.open("GET", "/test");
-        xhttp.send()
-    });
-}
-let id = getId()
-id.then(data =>{
-    render(data);
-})
-function render(id){
-    let host = location.href;
-    if (id === "undefined") {
-        sourceAvatar.srcset =  './img/account.webp';
-        avatar.src = host + './account.png'
-        
-    }else{
-        console.log(true);
+class User {
+    constructor(){
+        this.getId().then((data) => {
+            this.id = data;
+        });
     }
+    getId = () => {
+        return new Promise((resolve, reject) => {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = () => {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    resolve(xhttp.responseText);
+                }
+            }
+            xhttp.open("GET", "/test");
+            xhttp.send();
+        });
+    };
+    render = () => {
+        
+    };
 }
