@@ -4,6 +4,7 @@ class User {
             this.id = data;
         });
     }
+    id;
     getId = () => {
         return new Promise((resolve, reject) => {
             let xhttp = new XMLHttpRequest();
@@ -17,6 +18,5 @@ class User {
         });
     };
     render = () => {
-        
     };
 }
