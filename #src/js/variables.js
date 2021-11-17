@@ -18,8 +18,10 @@ mainheight()
 window.addEventListener('resize', mainheight);
 document.addEventListener("DOMContentLoaded", ready);
 function ready () {
-    document.body.classList.remove('lock');
-    preloader.style.display = 'none';
+    setTimeout(()=>{
+        document.body.classList.remove('lock');
+        preloader.style.display = 'none';
+    }, 100);
 }
 function preload(){
     document.body.classList.add('lock');
