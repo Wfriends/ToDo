@@ -4,15 +4,27 @@ let header = document.querySelector('.header'),
     links = document.querySelectorAll('[href="#"]'),
     avatar = document.querySelector('.header__person'),
     sourceAvatar = document.querySelector('.header__acc > picture > source'),
-    standartAvatar = "../img/account.png";
+    account = document.querySelector('.account'),
+    person = document.querySelector('.header__acc'),
+    preloader = document.querySelector('.preloader'),
     headerHeight = window.getComputedStyle(header).height.replace('px', '');
-main.style.paddingTop = headerHeight + 'px';
 //main height resize
 function mainheight(){
     main.style.minHeight = window.innerHeight + 'px';
+    account.style.top = headerHeight + 'px';
+    main.style.paddingTop = headerHeight + 'px';
 }
 mainheight()
 window.addEventListener('resize', mainheight);
+document.addEventListener("DOMContentLoaded", ready);
+function ready () {
+    document.body.classList.remove('lock');
+    preloader.style.display = 'none';
+}
+function preload(){
+    document.body.classList.add('lock');
+    preloader.style.display = 'flex';
+}
 //links e.preventDefault();
 function defaultLink(e){
     e.preventDefault();
@@ -20,4 +32,20 @@ function defaultLink(e){
 links.forEach(elem => {
     elem.addEventListener('click', defaultLink);
 });
-//loginned
+person.onclick = (e) => {
+    e.preventDefault();
+    e.stopPropagation()
+    showPopub(account);
+};
+document.body.onclick = (e) => {
+    if (account.classList.contains('_active') && !e.target.classList.contains('acc')) {
+        closePopub(account)
+        console.log(e.target.classList.contains('acc'));
+    }
+}
+function showPopub(popub){
+    popub.classList.add('_active');
+}
+function closePopub(popub){
+    popub.classList.remove('_active');
+}
