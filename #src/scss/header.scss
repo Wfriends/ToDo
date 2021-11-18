@@ -3,6 +3,9 @@
     position: fixed;
     z-index: 2;
     width: 100%;
+    &__link{
+        font-size: 20px;
+    }
     &__inner{
         padding: 10px 0;
         justify-content: space-between;

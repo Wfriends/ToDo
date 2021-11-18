@@ -22,6 +22,11 @@ function ready () {
         document.body.classList.remove('lock');
         preloader.style.display = 'none';
     }, 100);
+        if (location.pathname === '/') {
+            document.querySelector('.header__link').style.display = 'none';
+        }else{
+            document.querySelector('.header__link').style.display = 'block';
+        }
 }
 function preload(){
     document.body.classList.add('lock');
