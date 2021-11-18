@@ -6,7 +6,7 @@ module.exports = {
             signed: true
         });
         if (id == undefined) {
-            return "undefined";
+            return null;
         }else{
             return id;
         }

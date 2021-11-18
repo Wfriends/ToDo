@@ -4,12 +4,12 @@ class User {
    async getId() {
        preload()
         let res = await fetch('/test', {method: "GET"});
-        this.id = await res.text();
-        this.logined = this.id !== "undefined"
+        this.id = await res.json();
+        this.logined = this.id !== null;
         ready()
     }
-    id
-    logined = this.id !== "undefined"
+    id;
+    logined = this.id !== null;
     async start() {
         await this.getId()
         this.render()

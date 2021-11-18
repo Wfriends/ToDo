@@ -11,28 +11,29 @@ http.createServer((req, res) =>{
     if (req.method === "GET") {
         console.log("Запрос: "+ req.url);
         if(req.url == '/'){
-            sendRes('index.html', "text/html", res);
+            sendRes('index.html', "text/html", "/static/", res);
         }else if(req.url == '/test'){
             let logined = login.test(req, res);
             console.log(logined);
-            res.write(logined);
+            res.write(JSON.stringify(logined));
             res.end();
         }
         else{
-            sendRes(req.url, getType(req.url), res)
+            sendRes(req.url, getType(req.url), "/static/", res)
         }
     }
-}).listen(PORT, ()=>{
+}
+).listen(PORT, ()=>{
     console.log(`server start on ${PORT} port`);
 });
-function sendRes(url, contentType, res){
-    let file = path.join(__dirname + '/static/' + url);
+function sendRes(url, contentType, folder, res){
+    let file = path.join(__dirname + folder + url);
     fs.readFile(file, (err, content) => {
         if (err) {
             res.writeHead(404);
             res.write("file not found");
             res.end();
-            console.log('Error 404');
+            console.log(err);
         }else{
             res.writeHead(200, {"Content-Type": contentType});
             res.write(content);

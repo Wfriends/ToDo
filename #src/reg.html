@@ -9,11 +9,36 @@
         }
     </style>
     <main class="main">
-        <div class="container">
+        <div class="reg">
+            <div class="reg__container">
+                <h2 class="reg__title title">Регістрація</h2>
+                <form action="#" class="reg__form">
+                    <input class="reg__input input" required placeholder="Введіть сюди ваше прізвище:" type="text" name="surname" value="">
+                    <input class="reg__input input" required placeholder="Введіть сюди ваше ім'я:" type="text" name="name" value="">
+                    <input class="reg__input input" required placeholder="Введіть сюди вашу електронну адресу:" type="text" name="email" value="">
+                    <input class="reg__input input" required placeholder="Введіть сюди ваш пароль:" type="password" name="password" value="">
+                    <label for="avatar" class="avatar"> Прикрипіть сюди вашу аватарку. <span class="upload">Завантажити</span></label>
+                    <input class="reg__input hidden-input" required id="avatar" type="file" name="avatar" value="">
+                    <button type="submit" class="reg__btn btn">Зареєструватися</button>
+                </form>
+            </div>
         </div>
     </main>
     <script>
         document.title = 'Регістрація';
+        let temp = '';
+        let form = document.querySelector('form');
+        for(let i = 0; i < form.children.length; i++){
+            if (form.children[i].tagName === "INPUT") {
+            form.children[i].onfocus = function(){
+                temp = form.children[i].placeholder;
+                form.children[i].placeholder = ''
+                }
+                form.children[i].onblur = function(){
+                    form.children[i].placeholder = temp
+                }
+            }
+        }
     </script>
     @@include('blocks/scripts.html')
     
