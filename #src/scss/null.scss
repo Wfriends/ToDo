@@ -76,6 +76,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	margin: 10px auto;
 	font-size: 20px;
 	width: 80%;
+	cursor: pointer;
+	&:hover .upload{
+		background: rgb(17, 165, 120);
+	}
 }
 .upload{
 	background: rgb(9, 109, 79);
