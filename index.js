@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 8080;
 const login = require('./login');
 const Cookies = require('cookies');
 http.createServer((req, res) =>{
+    console.log("Запрос: "+ req.url);
     if (req.method === "GET") {
-        console.log("Запрос: "+ req.url);
         if(req.url == '/'){
             sendRes('index.html', "text/html", "/static/", res);
         }else if(req.url == '/test'){
@@ -20,6 +20,19 @@ http.createServer((req, res) =>{
         }
         else{
             sendRes(req.url, getType(req.url), "/static/", res)
+        }
+    }else if(req.method === "POST"){
+        if(req.url == '/create-user'){
+            let body = '';
+        req.on('data', chunk =>{
+            body += chunk;
+            console.log(body);
+        });
+            req.on('end', function(){
+            let user = JSON.parse(body)
+            console.log(user);
+            
+        });
         }
     }
 }

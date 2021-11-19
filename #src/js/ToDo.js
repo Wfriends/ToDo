@@ -46,7 +46,17 @@ class User {
         });
     }
     async createUser(){
-        let formdata = document.querySelector('reg__form').children;
-        console.log(formdata);
+        let regf = document.querySelector('.reg__form');
+        let data = regf.elements
+        let obj;
+            obj = {
+                surname: data.surname.value,
+                name: data.name.value,
+                password: data.password.value,
+                email: data.email.value,
+                image: data.avatar.files[0]
+            }
+        console.log(obj);
+        const post = await fetch("/create-user", {method: "POST", body: JSON.stringify(obj)});
     }
 }

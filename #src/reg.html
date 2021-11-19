@@ -18,7 +18,7 @@
                     <input class="reg__input input" required placeholder="Введіть сюди вашу електронну адресу:" type="text" name="email" value="">
                     <input class="reg__input input" required placeholder="Введіть сюди ваш пароль:" type="password" name="password" value="">
                     <label for="avatar" class="avatar"> Прикрипіть сюди вашу аватарку. <span class="upload">Завантажити</span></label>
-                    <input class="reg__input hidden-input" required id="avatar" type="file" name="avatar" value="">
+                    <input class="reg__input hidden-input" id="avatar" type="file" name="avatar" value="">
                     <img src="#" alt="" class="reg__prev">
                     <button type="submit" class="reg__btn btn">Зареєструватися</button>
                 </form>
@@ -30,8 +30,7 @@
     <script>
         document.title = 'Регістрація';
         let temp = '';
-        let prev = document.querySelector('.reg__prev').parentElement.children;
-        console.log(prev);
+        let form = document.querySelector('.reg__form');
         for(let i = 0; i < form.children.length; i++){
             if (form.children[i].tagName === "INPUT") {
             if (form.children[i].type === 'text' || form.children[i].type === 'password') {
@@ -43,6 +42,18 @@
                     form.children[i].placeholder = temp
                 }
             }
+            else if(form.children[i].type === 'file'){
+                    form.children[i].onchange = () =>{
+                            let reader = new FileReader();
+                            reader.onload = () => {
+                            let picture = document.querySelector('.reg__prev').parentElement.children;
+                            picture[0].srcset = reader.result;
+                            picture[1].src = reader.result;
+                        }
+                        reader.readAsDataURL(form.children[i].files[0]);
+                    }
+                }
+                
             }
         }
         form.onsubmit = function(e){
