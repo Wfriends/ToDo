@@ -19,6 +19,7 @@
                     <input class="reg__input input" required placeholder="Введіть сюди ваш пароль:" type="password" name="password" value="">
                     <label for="avatar" class="avatar"> Прикрипіть сюди вашу аватарку. <span class="upload">Завантажити</span></label>
                     <input class="reg__input hidden-input" required id="avatar" type="file" name="avatar" value="">
+                    <img src="#" alt="" class="reg__prev">
                     <button type="submit" class="reg__btn btn">Зареєструватися</button>
                 </form>
             </div>
@@ -29,18 +30,25 @@
     <script>
         document.title = 'Регістрація';
         let temp = '';
-        let form = document.querySelector('form');
+        let prev = document.querySelector('.reg__prev').parentElement.children;
+        console.log(prev);
         for(let i = 0; i < form.children.length; i++){
             if (form.children[i].tagName === "INPUT") {
-            form.children[i].onfocus = function(){
-                temp = form.children[i].placeholder;
-                form.children[i].placeholder = ''
+            if (form.children[i].type === 'text' || form.children[i].type === 'password') {
+                    form.children[i].onfocus = function(){
+                    temp = form.children[i].placeholder;
+                    form.children[i].placeholder = ''
                 }
-                form.children[i].onblur = function(){
+                    form.children[i].onblur = function(){
                     form.children[i].placeholder = temp
                 }
             }
+            }
         }
+        form.onsubmit = function(e){
+            e.preventDefault()
+            user.createUser()
+        } 
     </script>
 </body>
 </html>

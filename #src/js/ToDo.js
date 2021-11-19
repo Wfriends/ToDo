@@ -45,4 +45,8 @@ class User {
             }
         });
     }
+    async createUser(){
+        let formdata = document.querySelector('reg__form').children;
+        console.log(formdata);
+    }
 }
