@@ -24,15 +24,12 @@ http.createServer((req, res) =>{
     }else if(req.method === "POST"){
         if(req.url == '/create-user'){
             let body = '';
-        req.on('data', chunk =>{
-            body += chunk;
-            console.log(body);
-        });
-            req.on('end', function(){
-            let user = JSON.parse(body)
-            console.log(user);
-            
-        });
+            req.on('data', (chunk) => {
+                body += chunk.toString();
+            });
+            req.on('end', () => {
+                console.log();
+            })
         }
     }
 }

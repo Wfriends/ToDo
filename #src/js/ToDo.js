@@ -47,16 +47,10 @@ class User {
     }
     async createUser(){
         let regf = document.querySelector('.reg__form');
-        let data = regf.elements
-        let obj;
-            obj = {
-                surname: data.surname.value,
-                name: data.name.value,
-                password: data.password.value,
-                email: data.email.value,
-                image: data.avatar.files[0]
-            }
-        console.log(obj);
-        const post = await fetch("/create-user", {method: "POST", body: JSON.stringify(obj)});
+        let forme = regf.elements
+        let data = new FormData(document.querySelector('#reg'));
+        data.append('file', forme.avatar.files[0], 'test.png')      
+        console.log(Array.from(data));
+        const post = await fetch("/create-user", {method: "POST", body: JSON.stringify(Array.from(data))});
     }
 }
