@@ -7,6 +7,7 @@ const Folder = db.folder;
 const PORT = process.env.PORT || 8080;
 const login = require('./login');
 const Cookies = require('cookies');
+const formiable = require('formidable');
 http.createServer((req, res) =>{
     console.log("Запрос: "+ req.url);
     if (req.method === "GET") {
@@ -23,13 +24,7 @@ http.createServer((req, res) =>{
         }
     }else if(req.method === "POST"){
         if(req.url == '/create-user'){
-            let body = '';
-            req.on('data', (chunk) => {
-                body += chunk.toString();
-            });
-            req.on('end', () => {
-                console.log();
-            })
+            
         }
     }
 }
