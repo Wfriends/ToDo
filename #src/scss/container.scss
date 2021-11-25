@@ -26,13 +26,68 @@
     padding: 30px;
     background: #686868;
     border-radius: 29px;
-    height: auto;
     &__status{
-        float: right;
-        width: 70px;
-        height: 70px;
+        display: block;
+        left: 100%;
+        position: relative;
+        transform: translateX(-100%);
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
         background: rgb(20, 133, 238);
+    }
+    &__name{
+        font-size: 24px;
+    }
+    &__link{
+        display: block;
+        width: fit-content;
+        padding: 8px 11px;
+        margin: 0 auto;
+        font-weight: bold;
+        font-size: 17px;
+        background: #80CB74;
+        transition: .3s all ease;
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        &:hover{
+            background: #5e9051;
+        }
+    }
+    &__file{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        background: #CB8533;
+        align-items: center;
+        padding: 5px;
+        transition: .3s background-color ease;
+        &:hover{
+            background: #a0621c;
+        }
+    }
+    &__filename{
+        color: #fff;
+        font-size: 17px;
+    }
+    &__delfile{
+        transform: rotate(45deg);
+        color: red;
+        line-height: 0.5;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    &__add{
+        line-height: 0.5;
+        cursor: pointer;
+        font-size: 35px;
+        font-weight: bold;
+        width: fit-content;
+        margin:0;
+        margin-top: 20px;
+        transition: .3s transform ease;
+        &:hover{
+            transform: rotate(90deg);
+        }
     }
     &__head{
         display: flex;
