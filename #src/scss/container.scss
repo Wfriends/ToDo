@@ -94,6 +94,7 @@
         justify-content: space-between;
     }
     &__points{
+        position: relative;
         display: flex;
         width: 40px;
         justify-content: space-between;
@@ -105,4 +106,28 @@
             border-radius: 50%;
         }
     }
+}
+.task__context{
+    position: absolute;
+    background: #fff;
+    z-index: 3;
+    right: -25px;
+    width: fit-content;
+    padding: 10px 0;
+    font-size: 16px;
+    transition: .3s opacity ease;
+    opacity: 0;
+    visibility: hidden;
+    &._active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.task__opt{
+    white-space: nowrap;
+    padding: 0 20px;
+    &:not(:last-child){
+        border-bottom: 1px solid #000;
+    }
+    
 }

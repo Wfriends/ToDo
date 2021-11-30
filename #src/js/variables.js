@@ -7,6 +7,7 @@ let header = document.querySelector('.header'),
     account = document.querySelector('.account'),
     person = document.querySelector('.header__acc'),
     preloader = document.querySelector('.preloader'),
+    tableItem = document.querySelectorAll('.container__place'),
     headerHeight = window.getComputedStyle(header).height.replace('px', '');
 //main height resize
 function mainheight(){
