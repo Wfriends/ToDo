@@ -96,12 +96,14 @@
     &__points{
         position: relative;
         display: flex;
-        width: 40px;
+        width: 50px;
+        align-items: center;
         justify-content: space-between;
         & > span{
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             display: block;
+            transform: translateY(5px);
             background: #fff;
             border-radius: 50%;
         }
@@ -112,6 +114,7 @@
     background: #fff;
     z-index: 3;
     right: -25px;
+    top: 0px;
     width: fit-content;
     padding: 10px 0;
     font-size: 16px;
